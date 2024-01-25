@@ -1,8 +1,8 @@
 config:
   target: https://postman-echo.com/
   phases:
-    - duration: 60
-      arrivalRate: 3
+    - duration: 120
+      arrivalRate: 6
       name: Artillery Homework
   payload:
     - path: "userkey.csv"
