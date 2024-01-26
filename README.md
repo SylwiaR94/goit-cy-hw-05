@@ -1,5 +1,4 @@
 **Ograniczenia systemu**
-
 Checks:
 fail: http.request_rate >= 2 and http.response_time.max < 600
 fail: vusers.failed == 0
