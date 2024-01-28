@@ -1,3 +1,5 @@
+**PODSUMOWANIE**
+
 Wymagane założenia:
 
 1. Liczba obsłużonych żądań na sekundę powinna wynosić co najmniej 2.
