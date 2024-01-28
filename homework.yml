@@ -16,7 +16,8 @@ config:
       - http.response_time.p95: 1000
     conditions:
       - expression: vusers.failed == 0
-      - expression: "http.request_rate >= 2 and http.response_time.max < 600"
+      - expression: "http.request_rate >= 2"
+      - expression: "http.response_time.max < 600"
 scenarios:
   - name: Getting a resource
     flow:
@@ -30,9 +31,9 @@ scenarios:
           capture:
             - json: "$.json"
               as: "request_body"
-            - json: "$.headers.Host"
+            - json: "$.headers.host"
               as: "host"
       - log: "Json value from response is: {{ request_body }}"
-      - log: "Host value from response is: {{ request_body }}"
+      - log: "Host value from response is: {{ host }}"
       - log: "Userkey1: {{ userkey1 }}"
       - log: "Userkey2: {{ userkey2 }}"
