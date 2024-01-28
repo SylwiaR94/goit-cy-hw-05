@@ -1,9 +1,14 @@
-**Ograniczenia systemu**
-Checks:
-fail: http.request_rate >= 2 and http.response_time.max < 600
-fail: vusers.failed == 0
-fail: http.response_time.p95 < 1000
+Wymagane założenia:
 
-1. Czas najwolniejszego żądania wynosi więcej niż 600 milisekund.
-2. 720 użytkowników zakończyło swój scenariusz niepowodzeniem, więc warunek "vusers.failed == 0" zwrócił fail.
-3. Mniej niż 95% użytkowników dostało odpowiedź na żądanie w ciągu mniej niż 1 sekundy.
+1. Liczba obsłużonych żądań na sekundę powinna wynosić co najmniej 2.
+2. Czas odpowiedzi nie powinien przekroczyć 600ms.
+3. Podczas sesji każdy request powinien zwrócić odpowiedni response.
+4. Co najmniej 95% użytkowników powinno otrzymać odpowiedź w ciągu 1000ms lub szybciej.
+
+Wnioski:
+
+1. Według wyników większość z założonych kryteriów została spełniona.
+2. Liczba obsłużonych żadań na sekundę wyniosła 12.
+3. Maksymalny czas odpowiedzi został przekroczony 7-krotnie (4350).
+4. Co najmniej 95% użytkowników dostało odpowiedź na żądanie w ciągu mniej niż 1 sekundy.
+5. Wszyscy użytkownicy zakończyli swój scenariusz powodzeniem.
